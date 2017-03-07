@@ -1,0 +1,443 @@
+<html>
+<head></head>
+<body>
+
+<div id="pieChart"></div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<script src="js/d3pie.js"></script>
+<script>
+var pie = new d3pie("pieChart", {
+	"header": {
+		"title": {
+			"text": "Lots of Programming Languages",
+			"fontSize": 24,
+			"font": "open sans"
+		},
+		"subtitle": {
+			"text": "A full pie chart to show off label collision detection and resolution.",
+			"color": "#999999",
+			"fontSize": 12,
+			"font": "open sans"
+		},
+		"titleSubtitlePadding": 9
+	},
+	"footer": {
+		"text": "footer",
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-center"
+	},
+	"size": {
+		"canvasWidth": 590,
+		"pieOuterRadius": "90%"
+	},
+	"data": {
+		"sortOrder": "value-desc",
+		"content": [
+			{
+				"label": "JavaScript",
+				"value": 264131,
+				"color": "#a4a0c9"
+			},
+			{
+				"label": "Ruby",
+				"value": 218812,
+				"color": "#ac83d5"
+			},
+			{
+				"label": "Java",
+				"value": 157618,
+				"color": "#cd29eb"
+			},
+			{
+				"label": "PHP",
+				"value": 114384,
+				"color": "#cc9fb0"
+			},
+			{
+				"label": "Python",
+				"value": 95002,
+				"color": "#cb2121"
+			},
+			{
+				"label": "C+",
+				"value": 78327,
+				"color": "#dac861"
+			},
+			{
+				"label": "C",
+				"value": 67706,
+				"color": "#8b6834"
+			},
+			{
+				"label": "Objective-C",
+				"value": 36344,
+				"color": "#2081c1"
+			},
+			{
+				"label": "Shell",
+				"value": 28561,
+				"color": "#1ee675"
+			},
+			{
+				"label": "Cobol",
+				"value": 24131,
+				"color": "#e4a049"
+			},
+			{
+				"label": "C#",
+				"value": 100,
+				"color": "#913e99"
+			},
+			{
+				"label": "Coldfusion",
+				"value": 68,
+				"color": "#608d1b"
+			},
+			{
+				"label": "Fortran",
+				"value": 218812,
+				"color": "#312749"
+			},
+			{
+				"label": "Coffeescript",
+				"value": 157618,
+				"color": "#44b9ae"
+			},
+			{
+				"label": "Node",
+				"value": 114384,
+				"color": "#8fc467"
+			},
+			{
+				"label": "Basic",
+				"value": 95002,
+				"color": "#4baa49"
+			},
+			{
+				"label": "Cola",
+				"value": 36344,
+				"color": "#7b37c0"
+			},
+			{
+				"label": "Perl",
+				"value": 32170,
+				"color": "#0a6097"
+			},
+			{
+				"label": "Dart",
+				"value": 28561,
+				"color": "#85f71a"
+			},
+			{
+				"label": "Go",
+				"value": 264131,
+				"color": "#e65314"
+			},
+			{
+				"label": "Groovy",
+				"value": 218812,
+				"color": "#d1c77e"
+			},
+			{
+				"label": "Processing",
+				"value": 157618,
+				"color": "#7c9058"
+			},
+			{
+				"label": "Smalltalk",
+				"value": 114384,
+				"color": "#e98125"
+			},
+			{
+				"label": "Scala",
+				"value": 95002,
+				"color": "#aaec3c"
+			},
+			{
+				"label": "Visual Basic",
+				"value": 78327,
+				"color": "#830909"
+			},
+			{
+				"label": "Scheme",
+				"value": 67706,
+				"color": "#bf273e"
+			},
+			{
+				"label": "Rust",
+				"value": 36344,
+				"color": "#228835"
+			},
+			{
+				"label": "FoxPro",
+				"value": 32170,
+				"color": "#bca349"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"pieDistance": 32
+		},
+		"inner": {
+			"hideWhenLessThanPercentage": 3
+		},
+		"mainLabel": {
+			"fontSize": 11
+		},
+		"percentage": {
+			"color": "#ffffff",
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#adadad",
+			"fontSize": 11
+		},
+		"lines": {
+			"enabled": true
+		},
+		"truncation": {
+			"enabled": true
+		}
+	},
+	"tooltips": {
+		"enabled": true,
+		"type": "placeholder",
+		"string": "{label}: {value}, {percentage}%"
+	},
+	"effects": {
+		"pullOutSegmentOnClick": {
+			"effect": "elastic",
+			"speed": 400,
+			"size": 8
+		}
+	},
+	"misc": {
+		"gradient": {
+			"enabled": true,
+			"percentage": 100
+		}
+	}
+});
+pie = new d3pie("pieChart", {
+	"header": {
+		"title": {
+			"text": "Lots of Programming Languages",
+			"fontSize": 24,
+			"font": "open sans"
+		},
+		"subtitle": {
+			"text": "A full pie chart to show off label collision detection and resolution.",
+			"color": "#999999",
+			"fontSize": 12,
+			"font": "open sans"
+		},
+		"titleSubtitlePadding": 9
+	},
+	"footer": {
+		"text": "footer",
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-center"
+	},
+	"size": {
+		"canvasWidth": 500,
+		"pieOuterRadius": "90%"
+	},
+	"data": {
+		"sortOrder": "value-desc",
+		"content": [
+			{
+				"label": "JavaScript",
+				"value": 264131,
+				"color": "#a4a0c9"
+			},
+			{
+				"label": "Ruby",
+				"value": 218812,
+				"color": "#ac83d5"
+			},
+			{
+				"label": "Java",
+				"value": 157618,
+				"color": "#cd29eb"
+			},
+			{
+				"label": "PHP",
+				"value": 114384,
+				"color": "#cc9fb0"
+			},
+			{
+				"label": "Python",
+				"value": 95002,
+				"color": "#cb2121"
+			},
+			{
+				"label": "C+",
+				"value": 78327,
+				"color": "#dac861"
+			},
+			{
+				"label": "C",
+				"value": 67706,
+				"color": "#8b6834"
+			},
+			{
+				"label": "Objective-C",
+				"value": 36344,
+				"color": "#2081c1"
+			},
+			{
+				"label": "Shell",
+				"value": 28561,
+				"color": "#1ee675"
+			},
+			{
+				"label": "Cobol",
+				"value": 24131,
+				"color": "#e4a049"
+			},
+			{
+				"label": "C#",
+				"value": 100,
+				"color": "#913e99"
+			},
+			{
+				"label": "Coldfusion",
+				"value": 68,
+				"color": "#608d1b"
+			},
+			{
+				"label": "Fortran",
+				"value": 218812,
+				"color": "#312749"
+			},
+			{
+				"label": "Coffeescript",
+				"value": 157618,
+				"color": "#44b9ae"
+			},
+			{
+				"label": "Node",
+				"value": 114384,
+				"color": "#8fc467"
+			},
+			{
+				"label": "Basic",
+				"value": 95002,
+				"color": "#4baa49"
+			},
+			{
+				"label": "Cola",
+				"value": 36344,
+				"color": "#7b37c0"
+			},
+			{
+				"label": "Perl",
+				"value": 32170,
+				"color": "#0a6097"
+			},
+			{
+				"label": "Dart",
+				"value": 28561,
+				"color": "#85f71a"
+			},
+			{
+				"label": "Go",
+				"value": 264131,
+				"color": "#e65314"
+			},
+			{
+				"label": "Groovy",
+				"value": 218812,
+				"color": "#d1c77e"
+			},
+			{
+				"label": "Processing",
+				"value": 157618,
+				"color": "#7c9058"
+			},
+			{
+				"label": "Smalltalk",
+				"value": 114384,
+				"color": "#e98125"
+			},
+			{
+				"label": "Scala",
+				"value": 95002,
+				"color": "#aaec3c"
+			},
+			{
+				"label": "Visual Basic",
+				"value": 78327,
+				"color": "#830909"
+			},
+			{
+				"label": "Scheme",
+				"value": 67706,
+				"color": "#bf273e"
+			},
+			{
+				"label": "Rust",
+				"value": 36344,
+				"color": "#228835"
+			},
+			{
+				"label": "FoxPro",
+				"value": 32170,
+				"color": "#bca349"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"pieDistance": 32
+		},
+		"inner": {
+			"hideWhenLessThanPercentage": 3
+		},
+		"mainLabel": {
+			"fontSize": 11
+		},
+		"percentage": {
+			"color": "#ffffff",
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#adadad",
+			"fontSize": 11
+		},
+		"lines": {
+			"enabled": true
+		},
+		"truncation": {
+			"enabled": true
+		}
+	},
+	"tooltips": {
+		"enabled": true,
+		"type": "placeholder",
+		"string": "{label}: {value}, {percentage}%"
+	},
+	"effects": {
+		"pullOutSegmentOnClick": {
+			"effect": "elastic",
+			"speed": 400,
+			"size": 8
+		}
+	},
+	"misc": {
+		"gradient": {
+			"enabled": true,
+			"percentage": 100
+		}
+	}
+});
+</script>
+
+</body>
+</html>
