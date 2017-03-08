@@ -1,11 +1,12 @@
 <?php
-require 'database.php';
+ini_set("display_errors", 1);
+require 'connectTodb.php';
 
 $tbl_name = "baronys"; // Table name 
 mysqli_select_db($connection, "$db_name")or die("cannot select a DB");
-$countyid = $_GET["countyId"];
+$countyid = $_REQUEST["countyId"];
 
-$sql ="SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronys` WHERE `COUNTY_ID`=".$countyid;
+$sql ="SELECT ` COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronys` WHERE ` COUNTY_ID`=".$countyid;
 $query = mysqli_query($connection, $sql);
 if (!$query) {
     echo msqli_error();

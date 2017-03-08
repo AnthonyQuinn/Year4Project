@@ -23,7 +23,7 @@ if ($count == 1) {
     session_start();
     $_SESSION['username'] = $myusername;
 
-      echo 'OK'; 
+    print("OK"); 
 
 } else {
     echo 'FAIL';
