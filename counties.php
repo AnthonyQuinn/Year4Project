@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 session_start(true);
 if (!isset($_SESSION['username'])) {
     header('Location: http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER[SERVER_PORT] . "/year4project/", true, 303);
@@ -35,7 +35,11 @@ if (!isset($_SESSION['username'])) {
             </div>
             <h1 style="margin: 5px; text-align: center">County Population by Barony</h1>
         </div>
-        <div id="graphs" class="graphs"></div>   
+        <div id="graphs" class="graphs"></div> 
+
+
+
+
         <div id="focus" class="inactive"></div>
     </body>
 </html>

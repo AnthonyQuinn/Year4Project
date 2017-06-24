@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 function startup() {
-    var graphs = document.getElementById("graphs");
+   var graphs = document.getElementById("graphs"); 
+
+
     tip = d3.tip()
             .attr('class', 'd3-tip')
             .offset([-10, 0])
@@ -13,10 +15,13 @@ function startup() {
             });
 /* For loop */
     for (i = 1; i < 31; i++) {
-        var div = document.getElementById("graph" + i);
+        var div = document.getElementById("graph" + i); 
+               /** var div = document.getElementById("graphs" + i);/**changed graph to graphs **/
+
         if (div === null) {
             div = document.createElement("div");
-            div.setAttribute("id", "graph" + i);
+            div.setAttribute("id", "graph" + i); 
+
             div.setAttribute("class", "svg-container");
             div.setAttribute("tabindex", "0");
             div.setAttribute("onclick", "graphClicked(this)");
@@ -30,7 +35,9 @@ function startup() {
     }
 }
 
-function graphClicked(graph) {
+/** function graphClicked(graphs) {  **/
+    function graphClicked(graph) { 
+
     var graphId = graph.getAttribute("id");
     var countyId = graphId.substring(5);
     console.log(countyId);

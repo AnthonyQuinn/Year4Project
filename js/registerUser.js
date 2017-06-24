@@ -5,10 +5,7 @@
  */
 
 /*Function registerUser:
- * The flow of execution proceeds as expected until line 21, at which 
- * point it halts.The input username/password fields revert to their initial values.
- * The input password/username is saved to the database. 
- * The returned "OK"  value is not reckognized and the flow,halts.*/
+*/
 function registerUser() {
     var newUsername = document.getElementById("newUsername").value;
     var newPassword = document.getElementById("newPassword").value;
@@ -36,7 +33,6 @@ function registerUser() {
 
         }
     };
-    /*  document.getElementById('registrationForm').value = "";*//*The execution is not reaching this line, the registrationError is being triggered */
     xmlhttp.open("GET", UrlToSend, true);
     xmlhttp.send();// The actual request is now being sent.
     return false;

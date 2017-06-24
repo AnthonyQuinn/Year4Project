@@ -1,11 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);/* A problem which was eventually identified as being the addition of white spaces in the return "OK" was encountered. */
+ini_set('display_startup_errors', 1);/* The predceding two lines of code were included to identify the problem from any error message generated. */
 require 'connectTodb.php'/** 'database.php' **/; 
 
-/** The database.php file was missing, so a copy
- * was made of the connectTodb.php file in the WA_Repeat2016 folder. The configuration.php file
- *  in the same folder was also copied and $db_name = 'developmentproject2017' **/
+
   require 'session.php';   
 
 $tbl_name = "authorizedusers"; // Table name

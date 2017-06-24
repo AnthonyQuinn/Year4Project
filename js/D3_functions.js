@@ -5,7 +5,10 @@
  */
 function createBarChart(dataReturn, elementId) {
 if (typeof elementId === "undefined") {
-var container = document.getElementById("graph" + dataReturn[0].countyid);
+/**var container = document.getElementById("graph" + dataReturn[0].countyid);  **/
+var container = document.getElementById("graphs" + dataReturn[0].countyid); 
+
+
         elementId = container.getAttribute("id");
         container.innerHTML = "";
 } else {
@@ -233,7 +236,8 @@ var formatPercent = d3.format(".0");
  */
 function createPieChart(dataReturn, elementId) {
 if (typeof elementId === "undefined") {
-var container = document.getElementById("graph" + dataReturn[0].countyid);
+var container = document.getElementById("graph" + dataReturn[0].countyid); 
+
         container.innerHTML = "";
 } else {
 var container = document.getElementById(elementId);

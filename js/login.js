@@ -14,7 +14,7 @@ function login() {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
             var response = xmlhttp.responseText;
             console.log(response);
-            if (response === "    OK") {
+            if (response.trim() === "OK") {
                 /* window.location = "counties.php"; */
                 window.location = "/Year4Project/menu.html";
 
