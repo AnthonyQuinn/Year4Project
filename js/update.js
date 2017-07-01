@@ -10,46 +10,41 @@ function update(button) {
 
     var tr = button.parentElement.parentElement;
     var id = tr.firstElementChild.innerHTML; 
-     var username = tr.getElementsByTagName("td")[1].innerHTML;   
-console.log("user"+username);
-     var password = tr.getElementsByTagName("td")[2].innerHTML;  
-console.log("password"+password);
+     var username = tr.getElementsByTagName("td")[1].innerHTML; 
+
+     var password = tr.getElementsByTagName("td")[2].innerHTML; 
+
      
-   /* var username = tr.getElementsByTagName("td")[1].firstElementChild.innerHTML;  */  
-     /*  var username = tr.getElementsByTagName("td").length;   */ 
-
-  /* var count = tr.childNodes.length; */
-        
-
-      /*  var username = tr.getElementsByTagName("td")[2].firstElementChild.value;   */  
-
-
-
-    /*  var password = tr.getElementsByTagName("td")[3].firstElementChild.value; */
-   /* var password = tr.getElementsByTagName("td")[2].firstElementChild.value; */
+   
+         console.log("id: " + id  + " username:" + username + "password:" + password);   
 
 
 
 
-
-
-  /*  console.log("id: " + id + " username:" + username + "password:" + password);   */
-         console.log("id: " + id  + " username:" + username + "password" + password);   
-               /* console.log("id: " + id );   */
-
-
-
-
-    var UrlToSend = "update.php?id=" + id  + "&password=" + password;   
-      /*  var UrlToSend = "update.php?id=" + id ;   */
+    var UrlToSend = "update.php?id=" + id  +"&username" +username + "password=" + password;   
 
     if (window.XMLHttpRequest) {
         var xmlhttp = new XMLHttpRequest();
     } else {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
+     xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            var response = xmlhttp.responseText;
+           console.log(response); 
+            if (response === "OK") {
+                window.location = "index.html "; 
 
-    xmlhttp.open("POST", UrlToSend, true);
+
+            } else {
+              /*  document.getElementById("registrationError").style.display = "block"; */
+            }
+         /*   document.getElementById("registrationbutton").disabled = false; */
+
+        }
+    };
+
+    xmlhttp.open("GET", UrlToSend, true);
 
     xmlhttp.send();
 }

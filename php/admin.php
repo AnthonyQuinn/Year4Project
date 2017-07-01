@@ -18,7 +18,7 @@
         require 'configuration.php';
         require 'connectTodb.php';
         ?>
-
+        
         <table  class="table table-hover">
 
 
@@ -41,12 +41,10 @@
             }
             while ($rows = mysqli_fetch_array($result))
                 for ($x = 0; $x <= 2; $x++) {
-
                     if ($x == 0) {
                         print("<tr >");
                     } else {
-                        print("<td>" . $rows['id'] . "</td>" . "<td contenteditable='true'>" . $rows['username'] . "</td>" . "<td contenteditable='true'>" . $rows['password'] . "</td>"  . "</td>". "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "</td>");
-                        /*     print("<td>" . $rows['id'] . "</td>" . "<td  contenteditable='true'>" . $rows['username'] . "</td>" . "<td>" . $rows['password'] . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "</td>"); */
+                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>"  . "</td>". "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "</td>");
 
 
                         $x++;
@@ -58,6 +56,7 @@
             ?>
 
         </table>
+
 
         <?php
         print("<br>");
