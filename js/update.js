@@ -21,7 +21,7 @@ function update(button) {
 
 
 
-    var UrlToSend = "update.php?id=" + id  +"&username" +username + "&password=" + password;   
+    var UrlToSend = "update.php?id=" + id  +"&username=" +username + "&password=" + password;   
 
     if (window.XMLHttpRequest) {
         var xmlhttp = new XMLHttpRequest();
