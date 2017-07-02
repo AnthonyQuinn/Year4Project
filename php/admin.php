@@ -2,9 +2,7 @@
 <?php ?>
 <!DOCTYPE html>
 <html>
-    <!--Notes: 25 june 2017 @ 13:00 Working on a basic read out of the authorisedusers  table -->
     <head>
-        <!-- script  type="text/javascript" src="/WA_Repeat2016/js/update.js"></script --><!--Notes: This update.js may be useful. Leave it in for the moment -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,7 +16,7 @@
         require 'configuration.php';
         require 'connectTodb.php';
         ?>
-        
+
         <table  class="table table-hover">
 
 
@@ -27,6 +25,7 @@
                 <th>Username&nbsp;</th>
                 <th>Password</th>
                 <th>Update </th>
+                <th>Delete user</th>
 
 
 
@@ -44,7 +43,8 @@
                     if ($x == 0) {
                         print("<tr >");
                     } else {
-                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>"  . "</td>". "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "</td>");
+                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" ."&nbsp;"."&nbsp;"."<span></span>". "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return delete(this);'/>". "</td>");
+
 
 
                         $x++;
@@ -66,10 +66,7 @@
         ?>
 
     </body>
-    <!--?php
-    print("<hr>");
-    include "..\student_no_footer.php ";
-    ?-->
+   
 
 </html>
 
