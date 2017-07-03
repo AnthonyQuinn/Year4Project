@@ -17,17 +17,17 @@
         require 'connectTodb.php';
         ?>
 
-        <table  class="table table-hover">
+        <table   class="table table-hover" >
+
 
 
             <tr>
-                <th>Id</th>
-                <th>Username&nbsp;</th>
-                <th>Password</th>
-                <th>Update </th>
-                <th>Delete user</th>
+                
 
-
+                <th>Id&nbsp;</th>
+                <th>Username</th>
+                <th>Password </th>
+                <th>Update user details &nbsp;&nbsp;&nbsp;&nbsp;Delete user </th>
 
             </tr>
             <?php
@@ -41,9 +41,10 @@
             while ($rows = mysqli_fetch_array($result))
                 for ($x = 0; $x <= 2; $x++) {
                     if ($x == 0) {
-                        print("<tr >");
+                        print("<tr class='table'>");
                     } else {
-                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" ."&nbsp;"."&nbsp;"."<span></span>". "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return delete(this);'/>". "</td>");
+                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "&nbsp;" ."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;". "<span></span>" . "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return delete(this);'/>" . "</td>");
+
 
 
 
@@ -56,17 +57,22 @@
             ?>
 
         </table>
+        
+<?php
+                print("<input class='btn btn-success' type='button' value='Add new user'name='updateBtn3' onclick='return addNewUser(this);'/>");
 
+?>
 
         <?php
         print("<br>");
+
         ?>
         <?php
         mysqli_close($connection);
         ?>
 
     </body>
-   
+
 
 </html>
 
