@@ -8,7 +8,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/update.js" type="text/javascript"></script>
-
     </head>
     <body>
         <h1>Admin-user management: Modified Development Project 2017</h1>
@@ -59,9 +58,12 @@
         </table>
         
 <?php
-                print("<input class='btn btn-success' type='button' value='Add new user'name='updateBtn3' onclick='return addNewUser(this);'/>");
-
+            include 'createNewUserModal.html';
+            
+               print("<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button>");
+               
 ?>
+
 
         <?php
         print("<br>");
@@ -70,6 +72,7 @@
         <?php
         mysqli_close($connection);
         ?>
+        
 
     </body>
 
