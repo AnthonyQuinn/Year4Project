@@ -24,18 +24,24 @@ if (!isset($_SESSION['username'])) {
         <script language = "javascript"  src= "js/jsfunctions.js"></script>
     </head>
     <body onload="startup();">
+
         <div class="top">
             <div class="graphicons">
+
                 <fieldset name="graphtype">
+
                     <input id="piebutton" type="radio" name="pie" checked="checked" onchange="startup();"/>
                     <label for="piebutton" class="pie"><img src="piechart.svg" class="icon"/></label>
                     <input id="barbutton" type="radio" name="pie" onchange="startup();"/>
                     <label for="barbutton" class="bar"><img src="barchart.svg" class="icon"/></label>
                 </fieldset>
             </div>
-            <h1 style="margin: 5px; text-align: center">County Population by Barony</h1>
+            <h1 style="margin: 5px; text-align: center">County Population by Barony (Click on any graph to enlarge it)</h1>
+
+
         </div>
         <div id="graphs" class="graphs"></div> 
+
 
 
 

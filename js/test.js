@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 function startup() {
-   var graphs = document.getElementById("graphs"); 
+    var graphs = document.getElementById("graphs");
 
 
     tip = d3.tip()
@@ -13,14 +13,16 @@ function startup() {
             .html(function (d) {
                 return "<strong>Population:</strong> <span style='color:red'>" + d.value + "</span>";
             });
-/* For loop */
+
+    /* For loop */
     for (i = 1; i < 31; i++) {
-        var div = document.getElementById("graph" + i); 
-               /** var div = document.getElementById("graphs" + i);/**changed graph to graphs **/
+
+        var div = document.getElementById("graph" + i);
+        /** var div = document.getElementById("graphs" + i);/**changed graph to graphs **/
 
         if (div === null) {
             div = document.createElement("div");
-            div.setAttribute("id", "graph" + i); 
+            div.setAttribute("id", "graph" + i);
 
             div.setAttribute("class", "svg-container");
             div.setAttribute("tabindex", "0");
@@ -36,7 +38,7 @@ function startup() {
 }
 
 /** function graphClicked(graphs) {  **/
-    function graphClicked(graph) { 
+function graphClicked(graph) {
 
     var graphId = graph.getAttribute("id");
     var countyId = graphId.substring(5);
@@ -69,7 +71,7 @@ function startup2() {
             .html(function (d) {
                 return "<strong>Population:</strong> <span style='color:red'>" + d.value + "</span>";
             });
-/* For loop */
+    /* For loop */
     for (i = 1; i < 31; i++) {
         var div = document.getElementById("graph" + i);
         if (div === null) {
@@ -84,7 +86,7 @@ function startup2() {
         img.setAttribute("src", "load.svg");
         div.appendChild(img);
         graphs.appendChild(div);
-      /*  getPopulationByCounty(i, div.getAttribute("id")); */
+        /*  getPopulationByCounty(i, div.getAttribute("id")); */
         getHousingVacancy(i, div.getAttribute("id"));
     }
 }
@@ -100,8 +102,8 @@ function graphClicked2(graph) {
     element.setAttribute("onclick", "focusOff()");
     element.setAttribute("tabindex", "0");
     focus.appendChild(element);
- /*   getPopulationByCounty(countyId, "focus */
-    getHousingVacancy(countyId,"focus");
+    /*   getPopulationByCounty(countyId, "focus */
+    getHousingVacancy(countyId, "focus");
     focus.setAttribute("class", "active");
 }
 

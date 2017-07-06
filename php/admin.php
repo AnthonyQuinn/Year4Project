@@ -8,6 +8,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/update.js" type="text/javascript"></script>
+        <link href="../css/fixed.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/deleteUser.js" type="text/javascript"></script>
     </head>
     <body>
         <h1>Admin-user management: Modified Development Project 2017</h1>
@@ -15,7 +17,12 @@
         require 'configuration.php';
         require 'connectTodb.php';
         ?>
-
+<?php
+            include 'createNewUserModal.html';
+            
+               print("<div class='fixed'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button></div>");
+               
+?>
         <table   class="table table-hover" >
 
 
@@ -29,6 +36,7 @@
                 <th>Update user details &nbsp;&nbsp;&nbsp;&nbsp;Delete user </th>
 
             </tr>
+            
             <?php
             $sql = "SELECT `id`,`username`,`password` FROM `authorizedusers` ";
 
@@ -42,7 +50,7 @@
                     if ($x == 0) {
                         print("<tr class='table'>");
                     } else {
-                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "&nbsp;" ."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;". "<span></span>" . "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return delete(this);'/>" . "</td>");
+                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "&nbsp;" ."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;". "<span></span>" . "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return deleteUser(this);'/>" . "</td>");
 
 
 
@@ -57,12 +65,12 @@
 
         </table>
         
-<?php
+<!--?php
             include 'createNewUserModal.html';
             
                print("<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button>");
                
-?>
+?-->
 
 
         <?php
