@@ -15,7 +15,6 @@ function login() {
             var response = xmlhttp.responseText;
             console.log(response);
             if (response.trim() === "OK") {
-                /* window.location = "counties.php"; */
                 window.location = "/Year4Project/menu.html";
 
             } else {
