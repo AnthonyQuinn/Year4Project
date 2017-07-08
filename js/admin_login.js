@@ -24,8 +24,7 @@ function admin_login() {
             var response = xmlhttp.responseText;
             console.log(response);
             if (response.trim() === "OK") {
-
-                window.location = "/Year4Project/admin_menu.html";
+                window.location = "/Year4Project/php/admin_menu.php";
 
 
             } else {

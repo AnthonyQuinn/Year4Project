@@ -1,8 +1,29 @@
+
 <?php
- phpinfo(); 
-session_start();
-if (!isset($_SESSION['adminUsername']))
-    header("Location: index.html");
+  
+/*Including the php session variable at the top of the file prevents unauthorised entry to a user who is not logged in.
+ * In this particular case, access to the file is restricted to  an admin user who has been authenticated in the
+ * admin_login.php file ie correct username, password and admin col value of 1
+ * Once the $_SESSION['adminUsername'] has been set ( in the admin_login.php file ) its status ie set or not set can be verified 
+ * within any of the project files. 
+ * If the $_SESSION['adminUsername']  has not been set then thee is an automatic re-direction to the index.html file.  */
+  session_start();
+  /*  if(isset($_SESSION['adminUsername']) AND ($_SESSION['adminPassword'])) */
+            if(!isset($_SESSION['adminUsername']))
+
+    /*NOTE:  This needs to be checked, its throwing an error with the use of && or AND, no error when they are omitted ?  */
+{
+    header("Location: /Year4Project/index.html");
+  
+    exit; 
+}
+    
+    /* The exit command is included to stop any further execution of the page and
+     *  so as to prevent determined hackers or bots from circumventing the browser header and causing 
+     * problems.
+     * 
+     *  Online research into this topic would indicate that the use of the
+     * die() function or exit as has been used in this case are equally sufficent for this purpose. */
 ?>
 
 <!doctype html>
@@ -34,7 +55,7 @@ if (!isset($_SESSION['adminUsername']))
                                 <div style="display: inline-block;"><button  class='btn btn-primary'formaction="housingVacancy.php" >Visualize housing vacancy rate</button></div>
                                 <div style="display: inline-block;"><button class='btn btn-success' id="opt2" onclick="ajsFile2.js" >Visualize employment by industry</button></div>
                                 <div style="display: inline-block;"><button class='btn btn-primary' id="opt2" onclick="ajsFile2.js" >Visualize employment by occupation</button></div>
-                                <div style="display: inline-block;" ><button  class='btn btn-danger'  formaction="php/admin.php"> admin/management section </button></div>
+                                <div style="display: inline-block;" ><button  class='btn btn-danger'  formaction="admin.php"> admin/management section </button></div>
 
                             </form>
                         </div>

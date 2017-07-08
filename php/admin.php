@@ -1,5 +1,30 @@
+<?php
+  
+/*Including the php session variable at the top of the file prevents unauthorised entry to a user who is not logged in.
+ * In this particular case, access to the file is restricted to  an admin user who has been authenticated in the
+ * admin_login.php file ie correct username, password and admin col value of 1
+ * Once the $_SESSION['adminUsername'] has been set ( in the admin_login.php file ) its status ie set or not set can be verified 
+ * within any of the project files. 
+ * If the $_SESSION['adminUsername']  has not been set then thee is an automatic re-direction to the index.html file.  */
+  session_start();
+  /*  if(isset($_SESSION['adminUsername']) AND ($_SESSION['adminPassword'])) */
+            if(!isset($_SESSION['adminUsername']))
 
-<?php ?>
+    /*NOTE: 8th July 2017 :  This needs to be checked, its throwing an error with the use of && or AND, no error when they are omitted ?  */
+{
+    header("Location: /Year4Project/index.html");
+  
+    exit; 
+}
+    
+    /* The exit command is included to stop any further execution of the page and
+     *  so as to prevent determined hackers or bots from circumventing the browser header and causing 
+     * problems.
+     * 
+     *  Online research into this topic would indicate that the use of the
+     * die() function or exit as has been used in this case are equally sufficent for this purpose. */
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,18 +42,25 @@
         require 'configuration.php';
         require 'connectTodb.php';
         ?>
-<?php
-            include 'createNewUserModal.html';
-            
-               print("<div class='fixed'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button></div>");
-               
-?>
+        <?php
+        include 'createNewUserModal.html';
+
+
+
+        print("<div class='btn-group' role='group' aria-label='Button group with nested dropdown'> ");
+       print("<div class='fixed'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button></div>"); 
+      /*  print("<div><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button></div>"); */
+
+
+
+        print("</div>");
+        ?>
         <table   class="table table-hover" >
 
 
 
             <tr>
-                
+
 
                 <th>Id&nbsp;</th>
                 <th>Username</th>
@@ -36,7 +68,7 @@
                 <th>Update user details &nbsp;&nbsp;&nbsp;&nbsp;Delete user </th>
 
             </tr>
-            
+
             <?php
             $sql = "SELECT `id`,`username`,`password` FROM `authorizedusers` ";
 
@@ -50,7 +82,7 @@
                     if ($x == 0) {
                         print("<tr class='table'>");
                     } else {
-                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "&nbsp;" ."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;"."&nbsp;&nbsp;&nbsp;&nbsp;"."&nbsp;&nbsp;". "<span></span>" . "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return deleteUser(this);'/>" . "</td>");
+                        print("<td name='id'>" . $rows['id'] . "</td>" . "<td name='username' contenteditable='true'>" . $rows['username'] . "</td>" . "<td name='password' contenteditable='true'>" . $rows['password'] . "</td>" . "</td>" . "<td>" . "<input  class='btn btn-primary' type='button' value='update'name='updateBtn' onclick='return update(this);'/>" . "&nbsp;" . "&nbsp;&nbsp;" . "&nbsp;&nbsp;" . "&nbsp;&nbsp;" . "&nbsp;&nbsp;&nbsp;&nbsp;" . "&nbsp;&nbsp;" . "&nbsp;&nbsp;" . "&nbsp;&nbsp;" . "&nbsp;&nbsp;&nbsp;&nbsp;" . "&nbsp;&nbsp;" . "<span></span>" . "<input  class='btn btn-danger' type='button' value='Delete user'name='updateBtn2' onclick='return deleteUser(this);'/>" . "</td>");
 
 
 
@@ -64,23 +96,17 @@
             ?>
 
         </table>
-        
-<!--?php
-            include 'createNewUserModal.html';
-            
-               print("<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add new user</button>");
-               
-?-->
+
+
 
 
         <?php
         print("<br>");
-
         ?>
         <?php
         mysqli_close($connection);
         ?>
-        
+
 
     </body>
 
