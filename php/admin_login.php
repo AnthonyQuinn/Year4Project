@@ -1,9 +1,10 @@
 
 <?php
-require 'connectTodb.php'; 
-/*This is the admin_login.php file 7th July 2017 */
 
- /* require 'session.php';    */ /*NOTE: 8th July 2017 Commented this out temprorarily */
+require 'connectTodb.php';
+/* This is the admin_login.php file 7th July 2017 */
+
+/* require 'session.php';    */ /* NOTE: 8th July 2017 Commented this out temprorarily */
 
 $tbl_name = "authorizedusers"; // Table name
 $myadmin_username = $_REQUEST['adminUsername'];
@@ -18,13 +19,15 @@ $result = mysqli_query($connection, $sql);
 $count = mysqli_num_rows($result);
 if ($count == 1) {
     session_start();
+    $row = mysqli_fetch_assoc($result);
+
     $_SESSION['adminUsername'] = $myadmin_username;
-       /* $_SESSION['adminPassword'] = $myadmin_password; */
+    $_SESSION['adminPassword'] = $myadmin_password;
 
-    print("OK"); 
 
+
+    print("OK");
 } else {
     echo 'FAIL';
-     mysqli_close($connection); 
-    
+    mysqli_close($connection);
 }

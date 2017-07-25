@@ -8,8 +8,10 @@
  * within any of the project files. 
  * If the $_SESSION['adminUsername']  has not been set then thee is an automatic re-direction to the index.html file.  */
   session_start();
-  /*  if(isset($_SESSION['adminUsername']) AND ($_SESSION['adminPassword'])) */
-            if(!isset($_SESSION['adminUsername']))
+        if(!isset($_SESSION['adminUsername']) && !isset($_SESSION['adminPassword']))   /*This line is not throwing an error but its not preventing access to an un authorized user ie not redirecting to the main login page */
+            
+
+          /*  if(!isset($_SESSION['adminUsername'])) */   /*This works  */
 
     /*NOTE:  This needs to be checked, its throwing an error with the use of && or AND, no error when they are omitted ?  */
 {
