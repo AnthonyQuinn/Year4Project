@@ -11,7 +11,7 @@ $myId = $_GET["id"];
 $myusername = $_GET['username'];
 
 $mypassword = $_GET["password"];
-print_r("user: ".$myusername." pass: ".$mypassword);
+print_r("user: ".$myusername." pass: ".$mypassword);/*The print_r function was used to check the actual values being passed in from the client side */
 
 $myusername = stripslashes($myusername);
 $myusername = mysqli_real_escape_string($connection, $myusername);

@@ -2,7 +2,7 @@
 <?php
 
 require 'connectTodb.php';
-/* This is the admin_login.php file 7th July 2017 */
+/* This is the admin_login.php file */
 
 /* require 'session.php';    */ /* NOTE: 8th July 2017 Commented this out temprorarily */
 

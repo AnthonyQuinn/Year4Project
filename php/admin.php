@@ -6,7 +6,7 @@
  * within any of the project files. 
  * If the $_SESSION['adminUsername'] and $_SESSION['adminPassword'] has not been set then thee is an automatic re-direction to the index.html file.  */
 session_start();
-if (!isset($_SESSION['adminUsername']) && !isset($_SESSION['adminPassword'])) /* July 14 Bastille Day This is working now ie its re-directing to the index file if the user is not logged in as an administrator */
+if (!isset($_SESSION['adminUsername']) && !isset($_SESSION['adminPassword'])) /*  */
 
 /*   if(!isset($_SESSION['adminUsername'])) */
 

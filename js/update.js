@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*Note: This is a .js file in  Year4Project 26th June 2017  */
+/*Note: This is a .js file in  Year4Project   */
 
 
 function update(button) {
